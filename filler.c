@@ -6,7 +6,7 @@
 /*   By: passef <passef@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 15:44:39 by passef            #+#    #+#             */
-/*   Updated: 2018/01/05 11:23:42 by passef           ###   ########.fr       */
+/*   Updated: 2018/01/05 13:37:19 by passef           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ char	**alloc_board(int row, int col)
 	int i = 0;
 	while (i < row)
 	{
-		// give memory to each row
+		/*
+		**	give memory to each row
+		*/
 		board[i] = malloc(sizeof(char) * col);
 		i++;
 	}
@@ -73,18 +75,12 @@ void	parse_dimensions(char *line, int *row, int *col)
 }
 
 int	main(int ac, char **av)
-{
-	int		fd;
-	char	*line;
-	char	**board;
-	int		row;
-	int		col;
+{	
+	struct map;
 	
-	if (ac == 2)
-		fopen(av[1], "r+");
-	else
-		return (0);
-	get_next_line(1, &line);
+	map->line;
+	
+	get_next_line(1, map->&line);
 	parse_dimensions(line, &row, &col);
 	// first line gives dimensions of the board
 	// extract two numbers from this line (row, col)

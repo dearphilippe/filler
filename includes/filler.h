@@ -6,7 +6,7 @@
 /*   By: passef <passef@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 15:03:57 by passef            #+#    #+#             */
-/*   Updated: 2018/01/05 10:57:43 by passef           ###   ########.fr       */
+/*   Updated: 2018/01/05 13:36:23 by passef           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_read
 	int col;
 	char *line;
 	char **board;
-	struct s_env *next;
+	struct s_read *next;
 }t_read;
 
 void	ft_reader();

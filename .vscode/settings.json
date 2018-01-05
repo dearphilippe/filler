@@ -1,0 +1,17 @@
+{
+	"C_Cpp.errorSquiggles": "Disabled",
+	"files.associations": {
+		"printf.h": "c",
+		"libft.h": "c",
+		"stdint.h": "c"
+	},
+	"files.autoSave": "afterDelay",
+	"editor.fontSize": 14,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"code-runner.customCommand": "cd $dir && gcc -g -Wall -Werror -Wextra $fileName libftfiller.a -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+	"code-runner.cwd": "${workspaceFolder}",
+	"code-runner.defaultLanguage": "c",
+	"code-runner.runInTerminal": true,
+	"code-runner.saveAllFilesBeforeRun": true
+}

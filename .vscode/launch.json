@@ -9,7 +9,7 @@
 			"name": "Debug C",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/filler",
+			"program": "${workspaceFolder}/passef.filler",
 			"args": [],
 			"stopAtEntry": true,
 			"cwd": "${workspaceFolder}",

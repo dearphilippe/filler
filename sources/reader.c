@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstrf.c                                       :+:      :+:    :+:   */
+/*   reader.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: passef <passef@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/01 20:48:38 by passef            #+#    #+#             */
-/*   Updated: 2018/01/02 10:27:58 by passef           ###   ########.fr       */
+/*   Created: 2018/01/04 16:14:27 by passef            #+#    #+#             */
+/*   Updated: 2018/01/05 10:44:15 by passef           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/filler.h"
 
-void	ft_putstrf(char const *s)
+void	reader(void)
 {
-	int i;
-
-	i = -1;
-	while (s[++i])
-	{
-		ft_putchar(s[i]);
-		// *len = *len + 1;
-	}
+	
 }

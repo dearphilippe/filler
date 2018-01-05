@@ -6,7 +6,7 @@
 /*   By: passef <passef@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 15:03:57 by passef            #+#    #+#             */
-/*   Updated: 2018/01/04 16:19:16 by passef           ###   ########.fr       */
+/*   Updated: 2018/01/05 10:57:43 by passef           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,18 @@
 #define FILLER_H
 
 #include "../libft/libft.h"
+#include <string.h>
 
-void		ft_puty();
+typedef struct s_read
+{
+	int len;
+	int row;
+	int col;
+	char *line;
+	char **board;
+	struct s_env *next;
+}t_read;
+
+void	ft_reader();
 
 #endif

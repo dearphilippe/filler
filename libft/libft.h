@@ -6,12 +6,15 @@
 /*   By: passef <passef@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/24 12:49:11 by passef            #+#    #+#             */
-/*   Updated: 2018/01/02 01:41:09 by passef           ###   ########.fr       */
+/*   Updated: 2018/01/05 11:11:01 by passef           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# define MALLCHECK(x) if (!x) return (-1);
+# define BUFF_SIZE 42
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -75,7 +78,6 @@ char			*ft_itoa(int n);
 void			ft_putchar(char c);
 void			ft_putwchar(unsigned int w);
 void			ft_putstr(char const *s);
-void			ft_putstrf(char const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
 void			ft_putchar_fd(char c, int fd);
@@ -111,5 +113,7 @@ int				ft_strisprint(const char *str);
 char			*ft_strrev(char *s);
 int				ft_size_bin(unsigned int value);
 size_t			ft_lstsize(t_list *lst);
+int				get_next_line(const int fd, char **line);
+int				ft_copyuntil(char **dst, char *src, char c);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: passef <passef@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/21 14:58:27 by passef            #+#    #+#              #
-#    Updated: 2018/01/04 15:59:21 by passef           ###   ########.fr        #
+#    Updated: 2018/01/04 19:42:58 by passef           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,7 +106,7 @@ $(NAME)	: $(OBJ)
 	@echo "$(ERASE)$(PURPLE)LIBFT -$(NORM) $(GREEN)Creating Library$(NORM) $(CURSORUP)";
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
-	@echo "$(ERASE)$(PURPLE)LIBFT - $(NORM) $(GREEN)LIBFT Compiled!$(NORM)";
+	@echo "$(ERASE)$(PURPLE)LIBFT -$(NORM) $(GREEN)LIBFT Compiled!$(NORM)";
 
 %.o: %.c
 	@$(CC) $(FLAGS) -c $< -o $@
@@ -117,6 +117,6 @@ clean	:
 
 fclean	: clean
 	@$(RM) $(NAME)
-	@echo "$(ERASE)$(PURPLE)LIBFT - $(NORM) $(GREEN)Cleaning Library$(NORM)";
+	@echo "$(ERASE)$(PURPLE)LIBFT -$(NORM) $(GREEN)Cleaning Library$(NORM)";
 
 re		: fclean all

@@ -6,7 +6,7 @@
 /*   By: passef <passef@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 15:03:57 by passef            #+#    #+#             */
-/*   Updated: 2018/01/05 13:36:23 by passef           ###   ########.fr       */
+/*   Updated: 2018/01/05 16:32:53 by passef           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@
 #include "../libft/libft.h"
 #include <string.h>
 
-typedef struct s_read
+/*
+typedef struct s_read t_read;
+struct s_read
 {
-	int len;
+	int *len;
 	int row;
 	int col;
 	char *line;
 	char **board;
-	struct s_read *next;
-}t_read;
+	t_read *next;
+};
+*/
 
 void	ft_reader();
 

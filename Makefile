@@ -6,7 +6,7 @@
 #    By: passef <passef@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/23 22:58:59 by passef            #+#    #+#              #
-#    Updated: 2018/01/04 20:14:32 by passef           ###   ########.fr        #
+#    Updated: 2018/01/05 13:50:21 by passef           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME =	libftfiller.a
 EXEC =	passef.filler
 
 SRC =	filler.c \
-		sources/myfunc.c \
+		sources/reader.c \
 		libft/ft_putstr.c \
 		libft/ft_putstr_fd.c \
 		libft/ft_putchar_fd.c \

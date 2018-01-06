@@ -6,53 +6,74 @@
 /*   By: passef <passef@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 09:19:52 by passef            #+#    #+#             */
-/*   Updated: 2018/01/05 13:09:07 by passef           ###   ########.fr       */
+/*   Updated: 2018/01/05 15:10:05 by passef           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_list			*get_correct_file(t_list **file, int fd)
+static int		ft_read(char **str, int fd)
 {
-	t_list				*tmp;
+	int		ret;
+	char	*s;
+	char	buf[BUFF_SIZE + 1];
 
-	tmp = *file;
-	while (tmp)
-	{
-		if ((int)tmp->content_size == fd)
-			return (tmp);
-		tmp = tmp->next;
-	}
-	tmp = ft_lstnew("\0", fd);
-	ft_lstadd(file, tmp);
-	tmp = *file;
-	return (tmp);
+	if ((ret = read(fd, buf, BUFF_SIZE)) == -1)
+		return (-1);
+	buf[ret] = '\0';
+	s = *str;
+	*str = ft_strjoin(*str, buf);
+	if (*s != 0)
+		free(s);
+	return (ret);
 }
 
-int						get_next_line(const int fd, char **line)
+static int		ft_get_line(char **str, char **line, char *s)
 {
-	char				buf[BUFF_SIZE + 1];
-	static t_list		*file;
-	int					i;
-	int					ret;
-	t_list				*curr;
+	int		i;
+	char	*join;
 
-	if ((fd < 0 || line == NULL || read(fd, buf, 0) < 0))
-		return (-1);
-	curr = get_correct_file(&file, fd);
-	MALLCHECK((*line = ft_strnew(1)));
-	while ((ret = read(fd, buf, BUFF_SIZE)))
+	i = 0;
+	if (*s == '\n')
+		i = 1;
+	*s = 0;
+	*line = ft_strjoin("", *str);
+	if (i == 0 && ft_strlen(*str) != 0)
 	{
-		buf[ret] = '\0';
-		MALLCHECK((curr->content = ft_strjoin(curr->content, buf)));
-		if (ft_strchr(buf, '\n'))
-			break ;
+		*str = ft_strnew(1);
+		return (1);
 	}
-	if (ret < BUFF_SIZE && !ft_strlen(curr->content))
+	else if (i == 0 && !(ft_strlen(*str)))
 		return (0);
-	i = ft_copyuntil(line, curr->content, '\n');
-	(i < (int)ft_strlen(curr->content))
-		? curr->content += (i + 1)
-		: ft_strclr(curr->content);
-	return (1);
+	join = *str;
+	*str = ft_strjoin(s + 1, "");
+	free(join);
+	return (i);
+}
+
+int				get_next_line(int const fd, char **line)
+{
+	int			ret;
+	char		*s;
+	static char	*str;
+
+	if (str == 0)
+		str = "";
+	if (!line || BUFF_SIZE < 1)
+		return (-1);
+	ret = BUFF_SIZE;
+	while (line)
+	{
+		s = str;
+		while (*s || ret < BUFF_SIZE)
+		{
+			if (*s == '\n' || *s == 0 || *s == -1)
+				return (ft_get_line(&str, line, s));
+			s++;
+		}
+		ret = ft_read(&str, fd);
+		if (ret == -1)
+			return (-1);
+	}
+	return (0);
 }
